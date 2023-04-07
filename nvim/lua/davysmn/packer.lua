@@ -21,7 +21,7 @@ return require('packer').startup(function(use)
 			vim.cmd('colorscheme rose-pine')
 		end
 	})
-
+  use("zbirenbaum/copilot.lua")
 	use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate'})
 	use('nvim-treesitter/playground')
 	use("theprimeagen/harpoon")
@@ -43,6 +43,11 @@ return require('packer').startup(function(use)
       {'hrsh7th/nvim-cmp'},         -- Required
       {'hrsh7th/cmp-nvim-lsp'},     -- Required
       {'hrsh7th/cmp-nvim-lua'},     -- Optional
+      {'hrsh7th/cmp-buffer'},
+      {'hrsh7th/cmp-path'},
+      {'hrsh7th/cmp-cmdline'},
+      {'hrsh7th/nvim-cmp'},
+
       -- Snippets
       {'L3MON4D3/LuaSnip'},             -- Required
       {'saadparwaiz1/cmp_luasnip'},
@@ -51,8 +56,8 @@ return require('packer').startup(function(use)
   }
   use('prettier/vim-prettier')
   use {
-   'nvim-lualine/lualine.nvim',
-   requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
   use "lukas-reineke/indent-blankline.nvim"
   use "tpope/vim-surround"

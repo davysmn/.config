@@ -34,6 +34,7 @@ cmp.setup({
     ['<C-n>'] = cmp.mapping.select_next_item(),
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
     ["<C-Space>"] = cmp.mapping.complete(),
+    ["<Tab>"] = nil,
   });
 
   sources = cmp.config.sources({
@@ -49,6 +50,7 @@ lsp.set_preferences({
 })
 
 lsp.on_attach(function(client, bufnr)
+  print('LSP ', client.name, ' attached')
   lsp.default_keymaps({buffer = bufnr})
 end)
 
